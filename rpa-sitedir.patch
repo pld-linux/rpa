@@ -1,0 +1,37 @@
+diff -ur o-rpa-base-0.2.3/install.rb rpa-base-0.2.3/install.rb
+--- o-rpa-base-0.2.3/install.rb	2004-11-15 13:47:53.000000000 -0700
++++ rpa-base-0.2.3/install.rb	2005-02-20 22:46:45.474230017 -0700
+@@ -92,7 +92,7 @@
+             user_stories.txt bash_completion.sh]
+         task do 
+             fname = File.join("rpa/tmp", @config["sitelibdir"], "rpa/defaults.rb")
+-            sitelibdir = ::Config::CONFIG["sitelibdir"]
++            sitelibdir = ::Config::CONFIG["rubylibdir"]
+             sitelibdir.gsub!(/^#{Regexp.escape @config["prefix"]}/, "")
+             fname2 = File.join("rpa/tmp", sitelibdir, "rpa/defaults.rb")
+             [fname, fname2].each{|nam| File.open(nam, "w"){|f| f.puts $rpa_defaults_text }}
+Only in rpa-base-0.2.3/: install.rb.orig
+diff -ur o-rpa-base-0.2.3/lib/rpa/helper.rb rpa-base-0.2.3/lib/rpa/helper.rb
+--- o-rpa-base-0.2.3/lib/rpa/helper.rb	2004-11-05 09:19:27.000000000 -0700
++++ rpa-base-0.2.3/lib/rpa/helper.rb	2005-02-20 22:47:05.776712554 -0700
+@@ -448,9 +448,9 @@
+     end
+ 
+     def self.default_base_destdir(config, installer)
+-        sitearchdir = ::Config::CONFIG["sitearchdir"]
++        sitearchdir = ::Config::CONFIG["archdir"]
+         sitearchdir.gsub(/^#{::Config::CONFIG["prefix"]}/, "")
+-        sitearchdir = ::Config::CONFIG["sitearchdir"]
++        sitearchdir = ::Config::CONFIG["archdir"]
+         prefs = ::Config::CONFIG["prefix"], config["prefix"]
+         prefs = prefs.sort_by{|x| x.size }
+         # try the longest first
+@@ -486,7 +486,7 @@
+     require 'rbconfig'
+     def run(installer)
+         super
+-        sitelibdir = ::Config::CONFIG["sitelibdir"]
++        sitelibdir = ::Config::CONFIG["rubylibdir"]
+         prefs = ::Config::CONFIG["prefix"], @config["prefix"]
+         prefs = prefs.sort_by{|x| x.size }
+         # try the longest first

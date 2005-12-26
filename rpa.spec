@@ -1,11 +1,6 @@
-%define ruby_archdir    %(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
-%define ruby_rubylibdir %(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
-# 
 # TODO:
-# 
 # - FHS
 # - merge RPA build system with PLD ruby build system
-#
 Summary:	RPA-base - a package manager for the Ruby Production Archive
 Summary(pl):	RPA-base - zarz±dca pakietów dla archiwum Ruby Production Archive
 Name:		rpa
@@ -17,6 +12,7 @@ Source0:	http://rubyforge.org/frs/download.php/1904/%{name}-base-%{version}.tar.
 Patch0:		%{name}-sitedir.patch
 Group:		Development/Libraries
 URL:		http://www.rubyarchive.org/
+BuildRequires:	rpmbuild(macros) >= 1.272
 BuildRequires:	ruby
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

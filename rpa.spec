@@ -5,7 +5,7 @@ Summary:	RPA-base - a package manager for the Ruby Production Archive
 Summary(pl):	RPA-base - zarz±dca pakietów dla archiwum Ruby Production Archive
 Name:		rpa
 Version:	0.2.3
-Release:	1
+Release:	2
 License:	Ruby
 Source0:	http://rubyforge.org/frs/download.php/1904/%{name}-base-%{version}.tar.gz
 # Source0-md5:	5a46c4ead6ccd2ac8ba718beae033a63
@@ -13,7 +13,7 @@ Patch0:		%{name}-sitedir.patch
 Group:		Development/Libraries
 URL:		http://www.rubyarchive.org/
 BuildRequires:	rpmbuild(macros) >= 1.272
-BuildRequires:	ruby
+BuildRequires:	ruby-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

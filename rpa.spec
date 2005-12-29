@@ -12,8 +12,9 @@ Source0:	http://rubyforge.org/frs/download.php/1904/%{name}-base-%{version}.tar.
 Patch0:		%{name}-sitedir.patch
 Group:		Development/Libraries
 URL:		http://www.rubyarchive.org/
-BuildRequires:	rpmbuild(macros) >= 1.272
+BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
+%ruby_mod_ver_requires_eq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

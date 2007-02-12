@@ -2,7 +2,7 @@
 # - FHS
 # - merge RPA build system with PLD ruby build system
 Summary:	RPA-base - a package manager for the Ruby Production Archive
-Summary(pl.UTF-8):   RPA-base - zarządca pakietów dla archiwum Ruby Production Archive
+Summary(pl.UTF-8):	RPA-base - zarządca pakietów dla archiwum Ruby Production Archive
 Name:		rpa
 Version:	0.2.3
 Release:	2
@@ -25,7 +25,7 @@ RPA-base to zarządca pakietów dla archiwum Ruby Production Archive.
 
 %package base
 Summary:	Package database for RPA
-Summary(pl.UTF-8):   Baza danych pakietów dla RPA
+Summary(pl.UTF-8):	Baza danych pakietów dla RPA
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 

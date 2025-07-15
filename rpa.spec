@@ -37,7 +37,7 @@ Baza danych pakietów dla RPA.
 
 %prep
 %setup -q -n %{name}-base-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
